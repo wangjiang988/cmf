@@ -34,7 +34,7 @@ define("RUNTIME_PATH", SITE_PATH . "data/runtime/");
 //静态缓存目录
 define("HTML_PATH", SITE_PATH . "data/runtime/Html/");
 //版本号
-define("SIMPLEWIND_CMF_VERSION", 'X2.1.0');
+define("SIMPLEWIND_CMF_VERSION", '1.0');
 
 define("THINKCMF_CORE_TAGLIBS", 'cx,Common\Lib\Taglib\TagLibSpadmin,Common\Lib\Taglib\TagLibHome');
 
@@ -52,8 +52,7 @@ if(function_exists('saeAutoLoader') || isset($_SERVER['HTTP_BAE_ENV_APPID'])){
 define("UC_CLIENT_ROOT", './api/uc_client/');
 
 if(file_exists(UC_CLIENT_ROOT."config.inc.php")){
-	include UC_CLIENT_ROOT."config.inc.php";
-}
+	include UC_CLIENT_ROOT."config.inc.php"; }
 
 //载入框架核心文件
 require SPAPP_PATH.'Core/ThinkPHP.php';

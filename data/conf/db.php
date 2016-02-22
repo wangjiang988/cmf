@@ -7,11 +7,11 @@ return array(
     'DB_HOST' => 'localhost',
     'DB_NAME' => 'thinkcmf',
     'DB_USER' => 'root',
-    'DB_PWD' => '',
+    'DB_PWD' => 'asdf',
     'DB_PORT' => '3306',
     'DB_PREFIX' => 'cmf_',
     //密钥
-    "AUTHCODE" => 'NL973MNkyZzaTfl6zx',
+    "AUTHCODE" => 'xYkXsN2toplVeNIwPH',
     //cookies
-    "COOKIE_PREFIX" => '9Qirug_',
+    "COOKIE_PREFIX" => 'Py694O_',
 );
