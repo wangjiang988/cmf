@@ -6,3 +6,11 @@ INFO: [ app_begin ] --END-- [ RunTime:0.000189s ]
 NOTIC: [8] Undefined index: db_name /home/wwwroot/cmf/cmf/simplewind/Core/Library/Think/Db.class.php 第 68 行.
 SQL: show databases; [ RunTime:0.1583s ]
 
+[ 2016-02-22T23:15:37+08:00 ] 127.0.0.1 /index.php?g=install&a=testdbpwd
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: db_name D:\outsource\thinkcmf\jme\cmf\simplewind\Core\Library\Think\Db.class.php 第 68 行.
+SQL: show databases; [ RunTime:0.1290s ]
+

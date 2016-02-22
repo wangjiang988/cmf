@@ -5,13 +5,13 @@
 return array(
     'DB_TYPE' => 'mysql',
     'DB_HOST' => 'localhost',
-    'DB_NAME' => 'thinkcmf',
+    'DB_NAME' => 'jme',
     'DB_USER' => 'root',
-    'DB_PWD' => 'asdf',
+    'DB_PWD' => '',
     'DB_PORT' => '3306',
     'DB_PREFIX' => 'cmf_',
     //密钥
-    "AUTHCODE" => 'xYkXsN2toplVeNIwPH',
+    "AUTHCODE" => 'MyddKuqBcPmRMPE0dm',
     //cookies
-    "COOKIE_PREFIX" => 'Py694O_',
+    "COOKIE_PREFIX" => '4R6bhY_',
 );
