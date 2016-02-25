@@ -873,6 +873,9 @@ function sp_getslide($slide,$limit=5,$order = "listorder ASC"){
 
 }
 
+
+
+
 /**
  * 获取所有友情连接
  * @return array
@@ -1775,4 +1778,19 @@ function sp_delete_physics_img($imglist){
     }
     
     return $res;
+}
+
+
+/**
+   * @author wj 
+   * 得到二级子菜单列表
+   */
+function sp_get_submenu($navid,$where=array(),$limit=10,$order){
+    $nav_obj= M("Nav");
+	$where['parentid'] = $navid;
+    if($order == ''){
+		$order = "listorder ASC";
+	}
+	return $nav_obj->where($where)->order($order)->limit('0,'.$limit)->select();
+
 }

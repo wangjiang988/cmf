@@ -474,3 +474,11 @@ function sp_admin_get_tpl_file_list(){
 	}
 	return $tpl_files;
 }
+
+/**
+ * @author wj
+ * 执行js代码根据当前位置改变导航条字体颜色
+ */
+ function wj_change_menu_css($path){
+ 	echo "<script>wj_change_menu_css(".$path.")</script>";
+ }

@@ -15,6 +15,8 @@ class IndexController extends HomebaseController {
 	
     //首页
 	public function index() {
+//		dump($this->get());die;
+		
     	$this->display(":index");
     }
 

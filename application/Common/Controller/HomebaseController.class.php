@@ -35,6 +35,22 @@ class HomebaseController extends AppframeController {
 			$this->assign("user",sp_get_current_user());
 		}
 		
+		//wangjiang 初始化当前菜单 如果没有传入参数curNav, 则令$curNav=1 并传入到页面
+		$navid = (isset($_REQUEST['navid'])?$_REQUEST['navid']:1);
+		$curNav =sp_get_menu_info($navid);
+		if($curNav){
+			//查看是否有二级子元素
+			if($curNav['parentid'] == 0 ){
+				$curNav_1 = sp_get_submenu($navid,array(),1) ;
+				$curNav = empty($curNav_1)?$curNav:$curNav_1[0];
+			}
+			$path = explode('-', $curNav['path']);
+			@array_shift($path);
+			$this->assign("paths",array("path"=>$path));	
+		}
+		//wangjiang end
+		
+		
 	}
 	
 	/**

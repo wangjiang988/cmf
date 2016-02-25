@@ -40,6 +40,7 @@ class View {
             $this->tVar[$name] = $value;
         }
     }
+	
 
     /**
      * 取得模板变量的值

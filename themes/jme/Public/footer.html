@@ -1,0 +1,68 @@
+<!--<br>
+<br>
+<br>-->
+<!-- Footer ================================================== -->
+<!--<hr>-->
+{:hook('footer')}
+
+<div class="foots">
+    <div class="cent">
+        <div class="about_f">
+        	<php>$links=sp_getlinks();</php>
+            <span> 合作伙伴 </span>
+            <ul>
+            	<foreach name="links" item="vo">
+                <li class="sr"> <a href="{$vo.link_url}" title="{$vo.link_name}" style="background-image: url('__TMPL__Public/images/logo.png');" target="{$vo.link_target}"></a></li>
+                <!--<li class="sr2"><a href="http://www.hxb.com.cn/home/cn/" target="_blank"></a></li>
+                <li class="sr7"><a href="http://www.cebbank.com/" target="_blank"></a></li>
+                <li class="sr5"><a href="http://www.icbc.com.cn/icbc/" target="_blank"></a></li>
+                <li class="sr3"><a href="http://www.cmbchina.com/" target="_blank"></a></li>
+                <li class="sr6"><a href="http://www.boc.cn/" target="_blank"></a></li>
+                <li class="sr10"><a href="http://www.cngold.com.cn/" target="_blank"></a></li>
+                <li class="sr11"><a href="http://www.fx678.com/" target="_blank"></a></li>
+                <li class="sr12"><a href="http://www.nicemore.com/" target="_blank"></a></li>-->
+                <!--<li style="background:url(/Content/images/payb.png);"><a href="http://www.jme.com/home/hd/" target="_blank"></a></li>-->
+                </foreach>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="bootom">
+    <div class="wd_m">
+        <div class="left">
+            <span>
+                <em>江苏大圆银泰商品合约交易市场有限公司</em>
+                <div class="dis_img" style="width: 0px; height: 0px;"><img src="__TMPL__Public/images/wx_two.jpg"></div>
+            </span><i class="er_two">官方微信：</i>
+            <div class="blank10"></div>
+            <div class="copy_n"><a href="http://www.cngold.com.cn/" target="_blank"><img src="__TMPL__Public/images/copy_bt.png"></a></div>
+        </div>
+        <p><i><a href="http://www.jme.com/Market/MarketIntro" target="_blank">关于交易市场</a> | <a href="http://www.jme.com/SiteMap/SiteMap" target="_blank">网站地图</a> | <a href="http://www.jme.com/Market/ContactUs" target="_blank">联系我们</a> | <a href="http://www.jme.com/Recruitment/Index">诚聘英才</a>| <a href="http://www.jme.com/Article/LawsAndRegulations" target="_blank">法律法规</a> | <a href="http://www.jme.com/Memember/Mzsm" target="_blank">免责声明</a> </i><i>CopyRight © 2012-2016 DAYUANYINTAI. All Rights Reserved. <a href="http://www.miitbeian.gov.cn/" target="_blank">苏ICP备12006275号</a></i> <i>增值电信业务经营许可证：苏B1-20130063 苏B2-20130234 Tech support：<a href="http://www.cngold.com.cn/" target="_blank">cngold.com.cn</a></i></p>
+    </div>
+</div>
+
+<!--<div id="footer">
+	<div class="links">
+		<php>$links=sp_getlinks();</php>
+		<foreach name="links" item="vo">
+			<a href="{$vo.link_url}" target="{$vo.link_target}">{$vo.link_name}</a>
+		</foreach>
+	</div>
+	<p>
+		Made by <a href="http://www.thinkcmf.com" target="_blank">ThinkCMF</a>
+		Code licensed under the 
+		<a href="http://www.apache.org/licenses/LICENSE-2.0" rel="nofollow" target="_blank">Apache License v2.0</a>.
+		<br />
+		Based on 
+		<a href="http://getbootstrap.com/2.3.2/" target="_blank">Bootstrap</a>.
+		Icons from 
+		<a href="http://fortawesome.github.com/Font-Awesome/" target="_blank">Font Awesome</a>
+	</p>
+</div>-->
+<div id="backtotop">
+	<i class="fa fa-arrow-circle-up"></i>
+</div>
+{$site_tongji}

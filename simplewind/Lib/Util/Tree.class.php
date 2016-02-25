@@ -302,8 +302,12 @@ class Tree {
     	}
     		
     	foreach ($child as $id => $a) {
-    		
     		@extract($a);
+			
+			//王将add  加入导航定位效果
+			if(strlen($href)>1) $href .= '&navid='.$id;
+			//王将 end
+			
     		if ($showlevel > 0 && is_array($this->get_child($a['id']))){
     			$floder_status = " class='$dropdown $li_class'";
     		}else{
