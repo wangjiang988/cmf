@@ -13,7 +13,21 @@ var GV = {
     <script src="__PUBLIC__/js/wind.js"></script>
     <script src="__TMPL__Public/simpleboot/bootstrap/js/bootstrap.min.js"></script>
     <script src="__PUBLIC__/js/frontend.js"></script>
+    <script src="__TMPL__Public/js/jquery.form.js"></script>
 	<script>
+	$(function(){
+		$('a.path').each(function(){
+			$(this).click(function(){
+				path = $(this).data('path');
+				url = $(this).data('href');
+				if(url.indexOf('?')<=0) url += '?p='+path;
+				else url += '&p='+path;
+				location.href = url;
+//				$.form(url , { }, 'GET').submit();
+			});
+		});
+	});
+	
 	$(function(){
 		$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
 		

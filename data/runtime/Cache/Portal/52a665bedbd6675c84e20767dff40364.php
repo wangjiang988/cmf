@@ -26,6 +26,7 @@
     <link href="/themes/simplebootx/Public/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet">
     <link href="/themes/simplebootx/Public/simpleboot/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/themes/simplebootx/Public/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+	
 	<!--[if IE 7]>
 	<link rel="stylesheet" href="/themes/simplebootx/Public/simpleboot/font-awesome/4.4.0/css/font-awesome-ie7.min.css">
 	<![endif]-->
@@ -51,8 +52,7 @@
        <a class="brand" href="/"><img src="/themes/simplebootx/Public/images/logo.png"/></a>
        <div class="nav-collapse collapse" id="main-menu">
        	<?php
- $effected_id="main-menu"; $filetpl="<a href='\$href' target='\$target'>\$label</a>"; $foldertpl="<a href='\$href' target='\$target' class='dropdown-toggle' data-toggle='dropdown'>\$label <b class='caret'></b></a>"; $ul_class="dropdown-menu" ; $li_class="" ; $style="nav"; $showlevel=6; $dropdown='dropdown'; echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown); ?>
-		
+ $effected_id="main-menu"; $filetpl="<a href='javascript:;' class='path' data-path='\$path' data-href='\$href' target='\$target'>\$label</a>"; $foldertpl="<a href='javascript:;' data-path='\$path' data-href='\$href' target='\$target' class='dropdown-toggle path' data-toggle='dropdown'>\$label <b class='caret'></b></a>"; $ul_class="dropdown-menu" ; $li_class="" ; $style="nav"; $showlevel=2; $dropdown='dropdown'; echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown); ?>
 		<ul class="nav pull-right" id="main-menu-user">
 			<li class="dropdown user login">
 	            <a class="dropdown-toggle user" data-toggle="dropdown" href="#">
@@ -71,7 +71,7 @@
 	            <ul class="dropdown-menu pull-right">
 	               <li><a href="<?php echo U('api/oauth/login',array('type'=>'sina'));?>"><i class="fa fa-weibo"></i> &nbsp;微博登录</a></li>
 	               <li><a href="<?php echo U('api/oauth/login',array('type'=>'qq'));?>"><i class="fa fa-qq"></i> &nbsp;QQ登录</a></li>
-	               <li><a href="<?php echo leuu('user/login/index');?>"><i class="fa fa-sign-in"></i> &nbsp;登录</a></li>
+	               <li><a href="<?php echo ('user/login/index');?>"><i class="fa fa-sign-in"></i> &nbsp;登录</a></li>
 	               <li class="divider"></li>
 	               <li><a href="<?php echo leuu('user/register/index');?>"><i class="fa fa-user"></i> &nbsp;注册</a></li>
 	            </ul>
@@ -251,7 +251,21 @@ var GV = {
     <script src="/public/js/wind.js"></script>
     <script src="/themes/simplebootx/Public/simpleboot/bootstrap/js/bootstrap.min.js"></script>
     <script src="/public/js/frontend.js"></script>
+    <script src="/themes/simplebootx/Public/js/jquery.form.js"></script>
 	<script>
+	$(function(){
+		$('a.path').each(function(){
+			$(this).click(function(){
+				path = $(this).data('path');
+				url = $(this).data('href');
+				if(url.indexOf('?')<=0) url += '?p='+path;
+				else url += '&p='+path;
+				location.href = url;
+//				$.form(url , { }, 'GET').submit();
+			});
+		});
+	});
+	
 	$(function(){
 		$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
 		

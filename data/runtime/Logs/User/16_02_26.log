@@ -1,0 +1,21 @@
+[ 2016-02-26T16:49:44+08:00 ] 127.0.0.1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: url D:\outsource\thinkcmf\ThinkCMFX\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-02-26T16:49:45+08:00 ] 127.0.0.1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: url D:\outsource\thinkcmf\ThinkCMFX\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-02-26T16:49:47+08:00 ] 127.0.0.1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: url D:\outsource\thinkcmf\ThinkCMFX\application\Common\Controller\AppframeController.class.php 第 24 行.
+

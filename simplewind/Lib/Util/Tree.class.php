@@ -288,7 +288,9 @@ class Tree {
      */
     
     function get_treeview_menu($myid,$effected_id='example', $str="<span class='file'>\$name</span>", $str2="<span class='folder'>\$name</span>", $showlevel = 0,  $ul_class="" ,$li_class="" , $style='filetree ', $currentlevel = 1, $recursion=FALSE, $dropdown='hasChild') {
-    	
+    	//wangjiang
+    	$curId = isset($_GET['id'])?$_GET['id']:0;
+    	//ewangjiang
     	$child = $this->get_child($myid);
     	if (!defined('EFFECTED_INIT')) {
     		$effected = ' id="' . $effected_id . '"';
@@ -296,19 +298,51 @@ class Tree {
     	} else {
     		$effected = '';
     	}
-	$placeholder = '<ul><li><span class="placeholder"></span></li></ul>';
+	    $placeholder = '<ul><li><span class="placeholder"></span></li></ul>';
     	if (!$recursion){
     		$this->str .='<ul' . $effected . '  class="' . $style . '">';
     	}
-    		
+		//wangjiang 添加  当前路径 只有2层结构 加上这种路径解析
+		$is_level2_menu =  $showlevel == 2 ? true : false;
+		 
+		if($is_level2_menu){
+			if(isset($parentid)){
+				if($a['parentid'] != $parentid && $a['parentid']!=0 ){
+					//说明是第一个子菜单。
+					$is_first = true;	
+					$parentid = $a['parentid'];			
+				}
+			}else{
+				global $parentid;
+				$parentid = 0 ;
+			}
+			$path = isset($_REQUEST['p'])?$_REQUEST['p']:'0-1';
+			$arrPath = explode('-', $path);
+		}
+		//ewangjiang 
     	foreach ($child as $id => $a) {
-    		
     		@extract($a);
     		if ($showlevel > 0 && is_array($this->get_child($a['id']))){
-    			$floder_status = " class='$dropdown $li_class'";
+      			if(!$is_level2_menu)
+      				$floder_status = " class='menu $dropdown $li_class'";
+				else 
+					$floder_status = in_array($a['id'], $arrPath) ?  " class='menu active $dropdown $li_class'" : " class='menu $dropdown $li_class'";
     		}else{
-    			$floder_status = " class='$li_class'";;
+    			if(!$is_level2_menu)
+    				$floder_status = " class='$li_class'";
+				else{
+					$floder_status = in_array($a['id'], $arrPath) ? " class='active $li_class'" : " class='$li_class'";
+					// TODO $a['id']不再这个路径里边，但是他的上级路径在的话， 第一个元素也被激活。
+//					if($is_first  && in_array($a['parentid'], $arrPath) ){
+//						$floder_status = in_array($a['id'], $arrPath) ? " class='active $li_class'" : " class='$li_class'";
+//					}elseif (in_array($a['id'], $arrPath)){
+//						$floder_status =  " class='active $li_class'";
+//					}else{
+//						$floder_status =  " class='$li_class'";
+//					}
+				} 
     		}
+			
     		$this->str .= $recursion ? "<ul class='$ul_class'><li  $floder_status id= 'menu-item-$id'>" : "<li  $floder_status   id= 'menu-item-$id'>";
     		$recursion = FALSE;
     		//判断是否为终极栏目
@@ -320,12 +354,14 @@ class Tree {
     			} elseif ($showlevel > 0 && $showlevel == $currentlevel) {
     				//$this->str .= $placeholder;
     			}
+				//是终极栏目
     		} else {
     			eval("\$nstr = \"$str\";");
     			$this->str .= $nstr;
     		}
     		$this->str .=$recursion ? '</li></ul>' : '</li>';
     	}
+		unset($GLOBALS['parentid']);
     	if (!$recursion)
     		$this->str .='</ul>';
     	return $this->str;
